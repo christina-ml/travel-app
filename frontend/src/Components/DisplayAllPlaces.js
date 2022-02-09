@@ -17,19 +17,18 @@ const DisplayAllPlaces = () => {
 
     /* Returning this as an array of JSX. using the index of our .map as a key, to get rid of warning */
     let placesToDisplay = places.map((place, index)=>{
-        return (
-            <li key={index}>
-                {place.name}, {place.city}
-                <Link to={`/places/${place.id}`}>View Details</Link>
-            </li>
-        )
+        return <li key={index}>
+                    {place.name}, 
+                    {place.city}
+                    <Link to={`/places/${place.id}`}>View Details</Link>
+                </li>
     })
 
     return (
         <div>
             <div>Displaying all places</div>
             <ul>
-                {placesToDisplay}
+                { placesToDisplay }
             </ul>
         </div>
     )

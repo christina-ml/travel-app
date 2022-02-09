@@ -1,7 +1,7 @@
 const express = require("express");
 const places = express.Router();
 
-const { getAllPlaces } = require("../queries/places.js");
+const { getAllPlaces, getOnePlace } = require("../queries/places.js");
 
 places.get("/", async (req, res) => {
     try {
@@ -14,6 +14,22 @@ places.get("/", async (req, res) => {
         }
     } catch(error) {
         console.log(error);
+    }
+})
+
+/* New endpoint - for getOnePlace */
+places.get("/:id", async (req, res)=>{
+    /* Get the id, so we can pass it to `getOnePlace` */
+    const { id } = req.params;
+    try{
+        const place = await getOnePlace(id);
+        if(place.id){
+            res.status(200).json(place);
+        } else {
+            res.status(500).json({error: "Place was not returned from the db"});
+        }
+    } catch(err){
+        console.log(err);
     }
 })
 

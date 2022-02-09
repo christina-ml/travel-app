@@ -13,9 +13,9 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={ <Home />} />
-        <Route path="/places" element={ <DisplayAllPlaces /> } />
-        <Route path="/places/:id" element={ <DisplayOnePlace /> } />
+        <Route path="/" element={<Home />} />
+        <Route path="/places" element={<DisplayAllPlaces />} />
+        <Route path="/places/:id" element={<DisplayOnePlace />} />
       </Routes>
     </Router>
   );
