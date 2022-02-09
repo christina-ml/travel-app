@@ -13,6 +13,7 @@ const DisplayOnePlace = () => {
     useEffect(()=>{
         axios.get(API + "/places/" + id)
             .then((res)=>{
+                console.log(res);
                 setPlace(res.data);
             });
     }, [])
