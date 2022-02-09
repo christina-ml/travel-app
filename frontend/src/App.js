@@ -4,8 +4,9 @@ import './App.css';
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
-import DisplayAllPlaces from './Components/DisplayAllPlaces';
-import Home from './Components/Home';
+import Home from "./Components/Home";
+import DisplayAllPlaces from "./Components/DisplayAllPlaces";
+import DisplayOnePlace from "./Components/DisplayOnePlace";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home />} />
         <Route path="/places" element={ <DisplayAllPlaces /> } />
+        <Route path="/places/:id" element={ <DisplayOnePlace /> } />
       </Routes>
     </Router>
   );
