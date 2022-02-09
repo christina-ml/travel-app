@@ -8,12 +8,10 @@ const db = pgPromise({
     user: process.env.PG_USER
 });
 
-/* For troubleshooting: */
+/* For troubleshooting: `node db/dbConfig.js` */
 // db.any("SELECT * FROM places;")
 //     .then((data)=>{
 //         console.log(data);
 //     })
-
-// console.log("Trigger");
 
 module.exports = db;
